@@ -1,6 +1,7 @@
 /*
    @author Jamison Ball
    @date 1/29/15
+   @last update: 1/29/15
    
    *********************************************************************************************************
    The basic house class for team review
