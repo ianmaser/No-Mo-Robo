@@ -1,7 +1,7 @@
 /*
    @author Jamison Ball
    @date 1/29/15
-   @last update: 1/29/15
+   @last update: 2/5/15
    @last editor: //note to team members: put your name here if you edit the document
    
    *********************************************************************************************************
@@ -9,18 +9,18 @@
    *********************************************************************************************************
 */
 
-var House = function() {
+function House()
+{
 	var health = 100; 
-	var isHit = false; //just putting this here in case we need it for collision detection 
+        var xPos; // the house's position in the x
+        var yPos; // the house's position in the y
+        var sprite; //the reference to the image of the house
 
  //possible functions/variables
  /*
    Note: in this section is my guess as to what functions or variables this class may need functions in
    caps are things I think we will need but haven't discussed in detail
    
-   var noHealth-true if house has no health in which case we end the game
-   
-   function COLLISIONCHECK- check to see if the house has been hit
    function UPDATE-standard update method so we can provide feedback to the player
  */
  }
