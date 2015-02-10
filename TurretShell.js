@@ -17,6 +17,6 @@ var health = 100;
  ***************************************************************************************************************************/
  function checkCollison(); // handles collison detection (on one end?)
  function attack(var target); // attacks the param target (passed by user input)
- @overload function attack(); //attack function for automatic turrets
+/* @overload*/ function attack(); //attack function for automatic turrets
  function getTarget(); //gets the turret for attack function (click for manual retrieve for automatic)
  
