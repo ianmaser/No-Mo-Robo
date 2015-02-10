@@ -14,7 +14,7 @@ function House()
 	var health = 100; 
         var xPos; // the house's position in the x
         var yPos; // the house's position in the y
-        var sprite; //the reference to the image of the hous
+        var sprite; //the reference to the image of the house
         var SIZE = 200;
  //possible functions/variables
  /*
