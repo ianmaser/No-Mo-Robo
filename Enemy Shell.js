@@ -21,7 +21,7 @@ var sprite;
 funtions
 ******************************************************************************************************************
 */
-function move();
-function attack();
-function checkCollision();
-//function calculateShortestPath();
+function move(); //the standard movement function
+function attack(); // the standard attack function
+function checkCollision(); //checks collisons for resolve
+//function calculateShortestPath(); //finds the shortest path between this enemy and the house
