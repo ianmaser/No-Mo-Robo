@@ -15,7 +15,7 @@ function House()
         var xPos; // the house's position in the x
         var yPos; // the house's position in the y
         var sprite; //the reference to the image of the hous
-        var SIZE = 5;
+        var SIZE = 200;
  //possible functions/variables
  /*
    Note: in this section is my guess as to what functions or variables this class may need functions in
