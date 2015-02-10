@@ -12,9 +12,8 @@ var sprite;
 var damage = 5;
 var xPos;
 var yPos
-var SIZE = 20;
-var velocity = 2;
 var direction;
+var sprite;
 /* var LEFT;
    var UP;
    var DOWN;
