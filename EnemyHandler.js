@@ -9,7 +9,7 @@
  */
 
 
-function EnemyHandler()
+function EnemyHandler(world)
 {
   var length = 0;
   var enemyList = new DList();
@@ -18,12 +18,15 @@ function EnemyHandler()
   {
       var e = new Enemy(this.newID());
       enemyList.append(e);
+      world.addChild(e);
       length++;
   }
   this.removeEnemey = function(id)
   {
       enemyList.moveTo(id);
+      world.removeChild(enemyList.getElement())
       enemyList.remove();
+      length--;
   }
   this.update = function()
   {
