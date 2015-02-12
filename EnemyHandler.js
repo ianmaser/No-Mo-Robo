@@ -15,7 +15,7 @@ function EnemyHandler(world)
 {
   var length = 0;
   var enemyList = new DList();
-  var spawnHandle = new SpawnHandler();
+  var spawnHandle = new SpawnHandler(world);
   
 
  function removeEnemey()
