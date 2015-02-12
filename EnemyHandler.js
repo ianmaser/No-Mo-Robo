@@ -9,24 +9,26 @@
  */
 
 
+
+
 function EnemyHandler(world)
 {
   var length = 0;
   var enemyList = new DList();
+  var spawnHandle = new SpawnHandler();
   
- this.spawn = function()
+
+ function removeEnemey()
   {
-      var e = new Enemy(this.newID());
-      enemyList.append(e);
-      world.addChild(e);
-      length++;
-  }
-  this.removeEnemey = function(id)
-  {
-      enemyList.moveTo(id);
+    for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
+    {
+      if(enemyList.getElement() === null)
+      {
       world.removeChild(enemyList.getElement())
       enemyList.remove();
       length--;
+      }
+    }
   }
   this.update = function()
   {
@@ -36,9 +38,20 @@ function EnemyHandler(world)
       }
   }
   
-  this.newID = function()
+  function SpawnHandler(world)
+{
+  var enemyList = new DList();
+  
+  
+  function spawn(type, id)
   {
-      var next;
+      var e = new Enemy(type, ID());
+      return e;
+  };
+  
+  function ID()
+  {
+       var next;
       
       if(this.next === undefined || this.next < 0)
       {
@@ -46,4 +59,5 @@ function EnemyHandler(world)
       }
       return this.next++;
   }
+ 
   }
