@@ -1,16 +1,16 @@
 /************************************
-    List  
+    DList  
     
     Usage
    ^^^^^^^
-    var L = new List() creates empty list
+    var L = new DList() creates empty list
     
     L.size() returns number of elements in L
     L.getIndex() returns cursor index of L, negative implies invalid cursor
     L.front() returns first element of L, Precondition: size() > 0
     L.back() returns last element of L, Precondition: size() > 0
     L.getElement() returns cursor element of L, Precondition: getIndex() >= 0
-    L.equals(RHS) returns true iff L is equal to RHS, Precondition: RHS instanceof List
+    L.equals(RHS) returns true iff L is equal to RHS, Precondition: RHS instanceof DList
     
     L.moveTo(i) sets cursor to ith element of L, Precondition: 0 <= i < L.size()
     L.movePrev() decrements cursor position of L, Precondition: getIndex() >= 0
@@ -27,10 +27,10 @@
     L.remove() removes cursor element of L, Precondition: getIndex() >= 0
     
     L.copy() returns new List equal to L
-    L.concat(RHS) returns new List equal to L followed by RHS, Precondition: RHS instanceof List
+    L.concat(RHS) returns new List equal to L followed by RHS, Precondition: RHS instanceof DList
     
 ************************************/
-function List() {
+function DList() {
     
     function Node(data) {
         this.data = data;
@@ -56,9 +56,9 @@ function List() {
     // getElement() Precondition: getIndex() >= 0
     this.getElement = function() { if(_cursorIndex >= 0) return _cursor.data; }
     
-    // equals(RHS) Precondition: RHS instanceof List
+    // equals(RHS) Precondition: RHS instanceof DList
     this.equals = function(RHS) {
-        if(RHS instanceof List) {
+        if(RHS instanceof DList) {
             if(_length != RHS.size()) {
                 return false;
             }
@@ -267,16 +267,16 @@ function List() {
     }
     
     this.copy = function() {
-        var ret = new List();
+        var ret = new DList();
         for(var iter = _front; iter != null; iter = iter.next) {
             ret.append(iter.data);
         }
         return ret;
     }
     
-    // concat(RHS) Precondition: RHS instanceof List
+    // concat(RHS) Precondition: RHS instanceof DList
     this.concat = function(RHS) {
-        if(RHS instanceof List) {
+        if(RHS instanceof DList) {
             var ret = this.copy();
             for(RHS.moveTo(0); RHS.getIndex() >= 0; RHS.moveNext()) {
                 ret.append(RHS.getElement());
