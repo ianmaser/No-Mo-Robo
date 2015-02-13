@@ -29,17 +29,17 @@ function EnemyHandler(world)
       length--;
       }
     }
-  }
+  };
   this.update = function()
   {
       for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
       {
           enemyList.getElement().update();
       }
-  }
+  };
   
   function SpawnHandler(world)
-{
+  {
   var enemyList = new DList();
   
   
@@ -58,6 +58,6 @@ function EnemyHandler(world)
           this.next = 0;
       }
       return this.next++;
-  }
+  };
  
   }
