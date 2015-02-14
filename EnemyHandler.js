@@ -15,7 +15,7 @@ function EnemyHandler(world)
 {
   var length = 0;
   var enemyList = new DList();
-  var spawnHandle = new SpawnHandler(world);
+  var spwnHndlr = new SpawnHandler(world);
   
 
  function removeEnemey()
@@ -30,6 +30,18 @@ function EnemyHandler(world)
       }
     }
   };
+  
+  this.addEnemy = function(type, id)
+  {
+    Enemy e = spwnHndlr.spawn(type, id)); //make Enemy to be added
+    enemyList.append(e); //append it to the Enemy list
+    
+    if(e === enemyList.getElement()) //check to see if it's time to draw the enemy
+    {
+      world.addChild(e); //if so draw it
+    }
+    return; //if not return
+  }
   this.update = function()
   {
       for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
