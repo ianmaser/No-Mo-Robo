@@ -41,7 +41,7 @@ function EnemyHandler(world)
       world.addChild(e); //if so draw it
     }
     return; //if not return
-  }
+  };
   this.update = function()
   {
       for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
@@ -55,7 +55,7 @@ function EnemyHandler(world)
   var enemyList = new DList();
   
   
-  function spawn(type, id)
+  function spawn(type)
   {
       var e = new Enemy(type, ID());
       return e;
