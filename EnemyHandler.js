@@ -7,14 +7,13 @@
  * @last modified 2/13/15
  * @last editor 
  */
-
+ 
 function EnemyHandler(world)
 {
   var length = 0;
   var enemyList = new DList();
   var spwnHndlr = new SpawnHandler(world);
   
-
  function removeEnemey()
   {
     for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
@@ -39,6 +38,7 @@ function EnemyHandler(world)
     }
     return; //if not return
   };
+  
   this.update = function()
   {
       for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
@@ -50,7 +50,6 @@ function EnemyHandler(world)
   function SpawnHandler(world)
   {
   var enemyList = new DList();
-  
   
   function spawn(type)
   {
@@ -68,5 +67,4 @@ function EnemyHandler(world)
       }
       return this.next++;
   };
- 
   }
