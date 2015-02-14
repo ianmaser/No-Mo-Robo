@@ -31,9 +31,9 @@ function EnemyHandler(world)
     }
   };
   
-  this.addEnemy = function(type, id)
+  this.addEnemy = function(type)
   {
-    Enemy e = spwnHndlr.spawn(type, id)); //make Enemy to be added
+    Enemy e = spwnHndlr.spawn(type)); //make Enemy to be added
     enemyList.append(e); //append it to the Enemy list
     
     if(e === enemyList.getElement()) //check to see if it's time to draw the enemy
