@@ -8,9 +8,6 @@
  * @last editor 
  */
 
-
-
-
 function EnemyHandler(world)
 {
   var length = 0;
