@@ -4,7 +4,7 @@
  * **********************************************************************************************************************************************************************************************
  * @author Jamison Ball
  * @date 2/12/15
- * @last modified 2/13/15
+ * @last modified 2/14/15
  * @last editor 
  */
  
@@ -32,7 +32,7 @@ function EnemyHandler(world)
     Enemy e = spwnHndlr.spawn(type)); //make Enemy to be added
     enemyList.append(e); //append it to the Enemy list
     
-    if(e === enemyList.getElement()) //check to see if it's time to draw the enemy
+    if(e == enemyList.getElement()) //check to see if it's time to draw the enemy
     {
       world.addChild(e); //if so draw it
     }
