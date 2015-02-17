@@ -31,12 +31,7 @@ function EnemyHandler(world)
   {
     Enemy e = spwnHndlr.spawn(type)); //make Enemy to be added
     enemyList.append(e); //append it to the Enemy list
-    
-    if(e == enemyList.getElement()) //check to see if it's time to draw the enemy
-    {
-      world.addChild(e); //if so draw it
-    }
-    return; //if not return
+    world.addChild(e);
   };
   
   this.update = function()
@@ -44,6 +39,13 @@ function EnemyHandler(world)
       for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
       {
           enemyList.getElement().update();
+          
+          if(enemyList.getElement().isDead())
+          {
+            enemyList.getElement().removeSelf();
+            enemyList.remove(enemyList.getElement());
+            continue;
+          }
       }
   };
   
