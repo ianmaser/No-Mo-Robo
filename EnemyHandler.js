@@ -14,18 +14,6 @@ function EnemyHandler(world)
   var enemyList = new DList();
   var spwnHndlr = new SpawnHandler(world);
   
- function removeEnemey()
-  {
-    for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
-    {
-      if(enemyList.getElement() === null)
-      {
-      world.removeChild(enemyList.getElement())
-      enemyList.remove();
-      length--;
-      }
-    }
-  };
   
   this.addEnemy = function(type)
   {
