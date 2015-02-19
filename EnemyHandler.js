@@ -17,7 +17,7 @@ function EnemyHandler(world)
    {
     Enemy e = spwnHndlr.spawn(type)); //make Enemy to be added
     enemyList.append(e); //append it to the Enemy list
-    world.addChild(e);
+    world.addChild(e.getSprite());
    };
   
    this.update = function()
@@ -64,7 +64,7 @@ function EnemyHandler(world)
     
     function lane()
     {
-      return (rand(0, _NUM_LANES) * _LANE_HEIGHT) + _BASE_HEIGHT;
+      return (rand(0, NUM_LANES) * LANE_HEIGHT) + BASE_HEIGHT;
     };
    }
 }
