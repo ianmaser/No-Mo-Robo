@@ -18,10 +18,10 @@ function TurretHandler(world)
  */
     this.spawnTurret = function(type)
     {
-        if(turretList.size() < _MAX_TURRETS)
+        if(turretList.size() < MAX_TURRETS)
         {
             var turret = new Turret(type, ID());
-            turretList.append(turret);
+            turretList.append(turret.getSprite());
             world.addChild(turret);
         }
     };
@@ -58,8 +58,5 @@ function TurretHandler(world)
         return this.next++;
     };
 
-    this.getMaxTurrets = function()
-    {
-        return _MAX_TURRETS;
-    };
+  
 }
