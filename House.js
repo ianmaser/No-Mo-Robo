@@ -33,5 +33,10 @@ function House(texture, x, y)
    {
      return health;
    }
+   
+   this.modifyHealth = function(damage)
+   {
+     this.health -= damage;
+   }
       
 }
