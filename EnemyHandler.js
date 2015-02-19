@@ -13,6 +13,7 @@ function EnemyHandler(world)
   var length = 0;
   var enemyList = new DList();
   var spwnHndlr = new SpawnHandler(world);
+  var _NUM_LANES;
   
   
   
@@ -50,7 +51,7 @@ function EnemyHandler(world)
   
     function spawn(type)
     {
-      var e = new Enemy(type, ID());
+      var e = new Enemy(type, ID(), lane());
       return e;
     };
   
@@ -64,5 +65,15 @@ function EnemyHandler(world)
       }
       return this.next++;
     };
+    
+    function lane()
+    {
+      rand(0, _NUM_LANES);
+    };
+    
+    this.getNumLanes()
+    {
+      return _NUM_LANES;
+    }
    }
 }
