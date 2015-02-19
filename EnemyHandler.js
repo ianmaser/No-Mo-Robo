@@ -64,7 +64,7 @@ function EnemyHandler(world)
     
     function lane()
     {
-      (rand(0, _NUM_LANES) * _LANE_HEIGHT) + _BASE_HEIGHT;
+      return (rand(0, _NUM_LANES) * _LANE_HEIGHT) + _BASE_HEIGHT;
     };
    }
 }
