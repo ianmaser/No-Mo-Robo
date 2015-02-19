@@ -41,6 +41,11 @@ function EnemyHandler(world)
             ememyList.remove();
           }
    };
+   
+    this.getNumLanes()
+    {
+      return _NUM_LANES;
+    };
   
    function SpawnHandler(world)
    {
@@ -67,10 +72,5 @@ function EnemyHandler(world)
     {
       rand(0, _NUM_LANES);
     };
-    
-    this.getNumLanes()
-    {
-      return _NUM_LANES;
-    }
    }
 }
