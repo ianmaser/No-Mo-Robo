@@ -10,12 +10,9 @@
  
 function EnemyHandler(world)
 {
-  var length = 0;
   var enemyList = new DList();
   var spwnHndlr = new SpawnHandler(world);
   var _NUM_LANES;
-  
-  
   
    this.addEnemy = function(type)
    {
