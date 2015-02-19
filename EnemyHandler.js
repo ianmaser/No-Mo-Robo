@@ -12,7 +12,6 @@ function EnemyHandler(world)
 {
   var enemyList = new DList();
   var spwnHndlr = new SpawnHandler(world);
-  var _NUM_LANES;
   
    this.addEnemy = function(type)
    {
@@ -42,11 +41,6 @@ function EnemyHandler(world)
           }
    };
    
-    this.getNumLanes()
-    {
-      return _NUM_LANES;
-    };
-  
    function SpawnHandler(world)
    {
     var enemyList = new DList();
