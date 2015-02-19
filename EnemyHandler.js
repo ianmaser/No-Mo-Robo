@@ -13,7 +13,6 @@ function EnemyHandler(world)
   var length = 0;
   var enemyList = new DList();
   var spwnHndlr = new SpawnHandler(world);
-  var deadList = new DList();
   
   
   
@@ -26,6 +25,8 @@ function EnemyHandler(world)
   
    this.update = function()
    {
+     var deadList = new DList();
+     
       for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
       {
           var curEnemy = enemyList.getElement();
