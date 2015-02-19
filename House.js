@@ -13,19 +13,11 @@ the House for the tower defense
 function House(texture, x, y)
 {
    var health = 100;
-   var sprte = new Sprite();
-   sprite.image = Texutes.load(texture);
+   var sprite = new Sprite();
+   sprite.image = Textures.load(texture);
    sprite.x = x;
    sprite.y = y;
    
-   this.update = function()
-   {
-     if(dead())
-     {
-        return 0;
-     }
-     return 1;
-   }
    
    this.draw = function()
    {
@@ -34,7 +26,7 @@ function House(texture, x, y)
    
    this.dead = function()
    {
-      return getHealth() == 0;
+      return getHealth() <= 0;
    }
    
    this. getHealth = function()
