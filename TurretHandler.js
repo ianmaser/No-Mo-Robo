@@ -11,7 +11,6 @@
 function TurretHandler(world)
 {
     var turretList = new DList();
-    var _MAX_TURRETS; //maximum turrets allowed on the field
 
 /*
  * @param x and @param y may be unnecesarry depending on the implementation of Turret.js.
