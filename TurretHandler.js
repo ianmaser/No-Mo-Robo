@@ -1,7 +1,7 @@
 /* 
  * @author Jamison Ball
  * @date 2/13/15
- * @last update 2/17/15
+ * @last update 2/18/15
  * @last editor
  * *************************************************************************************************************************************************************************************************
  * A class to handle the spawning of turrets. Note to other team members: I thought it easier to include a spawn function rather than write another spawn handler specific to turrets.
@@ -11,59 +11,56 @@
 function TurretHandler(world)
 {
     var turretList = new DList();
-    //var length = 0;
     var _MAX_TURRETS; //maximum turrets allowed on the field
 
 /*
  * @param x and @param y may be unnecesarry depending on the implementation of Turret.js.
  * Furthur this may be reworked into private function. May need x and y params
  */
-this.spawnTurret = function(type)
-{
-   if(turretList.size() < _MAX_TURRETS)
-   {
-    var turret = new Turret(type, ID());
-  //  turret.x = x;
-  //  turret.y = y;
-    turretList.append(turret);
-    world.addChild(turret);
-   // length++
-   }
-   
-   else
-   {
-       return;
-   }
-};
-
-this.update = function()
-{
-    for(turretList.moveTo(0); turretList.getIndex() >= 0; turretList.moveNext())
+    this.spawnTurret = function(type)
     {
-         turretList.getElement().update();
-          
-      if(turretList.getElement().isDead())
-      {
-          turretList.getElement().removeSelf();
-          turretList.remove();
-         // length--;
-      }
-    }
-};
+        if(turretList.size() < _MAX_TURRETS)
+        {
+            var turret = new Turret(type, ID());
+            turretList.append(turret);
+            world.addChild(turret);
+        }
+    };
 
-function ID()
-{
-    var next;
+    this.update = function()
+    {
+        var deadList = new DList();
+     
+      for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
+      {
+          var curT = turretList.getElement();
+          
+          if(!curT.update())
+          {
+            deadList.append(turretList.getIndex());
+          }
+      }
+          
+          for(deadList.moveTo(0); deadList.getIndex() >= 0; deadList.moveNext())
+          {
+            turretList.moveTo(deadList.getElement());
+            turretList.remove();
+          }
+    };
+
+    function ID()
+    {
+        var next;
       
       if(this.next === undefined || this.next < 0)
       {
           this.next = 0;
       }
-      return this.next++;
-};
+        return this.next++;
+    };
 
-this.getMaxTurrets = function()
-{
-    return _MAX_TURRETS;
-};
+    this.getMaxTurrets = function()
+    {
+        return _MAX_TURRETS;
+    };
 }
