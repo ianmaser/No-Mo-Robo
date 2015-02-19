@@ -13,7 +13,6 @@ the House for the tower defense
 function House(texture)
 {
    var health = 100;
-   var dead = false;
    var sprte = new Sprite();
    sprite.image = Texutes.load(texture);
    
