@@ -10,11 +10,13 @@ the House for the tower defense
 @last editor
 */
 
-function House(texture)
+function House(texture, x, y)
 {
    var health = 100;
    var sprte = new Sprite();
    sprite.image = Texutes.load(texture);
+   sprite.x = x;
+   sprite.y = y;
    
    this.update = function()
    {
