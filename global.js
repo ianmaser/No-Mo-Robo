@@ -7,7 +7,7 @@ A list of global variables (to be decalred) and functions for use in different c
 @last: update
 @last: editor
 */
-var _MAX_TURRETS; //max number of turrets on the field
-var _NUM_LANES; //the number of lanes
-var _LANE_HEIGHT; //the height of each lane
-var _BASE_HEIGHT; // dstance between the tile grid and the bottom of the screen
+var MAX_TURRETS; //max number of turrets on the field
+var NUM_LANES; //the number of lanes
+var LANE_HEIGHT; //the height of each lane
+var BASE_HEIGHT; // dstance between the tile grid and the bottom of the screen
