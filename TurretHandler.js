@@ -21,8 +21,8 @@ function TurretHandler(world)
         if(turretList.size() < MAX_TURRETS)
         {
             var turret = new Turret(type, ID());
-            turretList.append(turret.getSprite());
-            world.addChild(turret);
+            turretList.append(turret);
+            world.addChild(turret.getSprite());
         }
     };
 
