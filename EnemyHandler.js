@@ -13,42 +13,48 @@ function EnemyHandler(world)
   var length = 0;
   var enemyList = new DList();
   var spwnHndlr = new SpawnHandler(world);
+  var deadList = new DList();
   
   
-  this.addEnemy = function(type)
-  {
+  
+   this.addEnemy = function(type)
+   {
     Enemy e = spwnHndlr.spawn(type)); //make Enemy to be added
     enemyList.append(e); //append it to the Enemy list
     world.addChild(e);
-  };
+   };
   
-  this.update = function()
-  {
+   this.update = function()
+   {
       for(enemyList.moveTo(0); enemyList.getIndex() >= 0; enemyList.moveNext())
       {
-          enemyList.getElement().update();
+          var curEnemy = enemyList.getElement();
           
-          if(enemyList.getElement().isDead())
+          if(!curEnemy.update())
           {
-            enemyList.getElement().removeSelf();
-            enemyList.remove(enemyList.getElement());
-            continue;
+            deadList.append(enemyList.getIndex());
           }
       }
-  };
+          
+          for(deadList.moveTo(0); deadList.getIndex() >= 0; deadList.moveNext())
+          {
+            enemyList.moveTo(deadList.getElement());
+            ememyList.remove();
+          }
+   };
   
-  function SpawnHandler(world)
-  {
-  var enemyList = new DList();
+   function SpawnHandler(world)
+   {
+    var enemyList = new DList();
   
-  function spawn(type)
-  {
+    function spawn(type)
+    {
       var e = new Enemy(type, ID());
       return e;
-  };
+    };
   
-  function ID()
-  {
+    function ID()
+    {
        var next;
       
       if(this.next === undefined || this.next < 0)
@@ -56,5 +62,6 @@ function EnemyHandler(world)
           this.next = 0;
       }
       return this.next++;
-  };
-  }
+    };
+   }
+}
