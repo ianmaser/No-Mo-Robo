@@ -45,7 +45,7 @@ function EnemyHandler(world)
    {
     var enemyList = new DList();
   
-    function spawn(type)
+    this.spawn = function(type)
     {
       var e = new Enemy(type, ID(), lane());
       return e;
