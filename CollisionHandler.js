@@ -1,4 +1,5 @@
 /* 
+   CollisonHandler.js
  * @authors Graham Culver, Jamison Ball
  * @date 2/22/15
  * @last modified 2/22/15
