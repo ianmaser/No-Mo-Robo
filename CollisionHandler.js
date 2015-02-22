@@ -14,3 +14,5 @@ function CollsionHandler(world)
     var currentEnemies = new DList();
     var house = getHouse();
 }
+
+
