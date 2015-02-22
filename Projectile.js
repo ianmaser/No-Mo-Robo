@@ -1,7 +1,7 @@
 /* 
  * @author Jamison Ball
- * @date 2/21/15
- * @last update 2/21/15
+ * @date 2/22/15
+ * @last update 2/22/15
  * @last editor
  * ************************************************************************************************************************************************************************************************
  * The basic projectile class. It might possibly go unused but it's a decent test class for collison detection
