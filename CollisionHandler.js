@@ -12,7 +12,12 @@ function CollsionHandler(world)
 {
     var curretTurrets = new DList();
     var currentEnemies = new DList();
-    var house = getHouse();
+    var currentProjectiles = new DList();
+    
+    function checkCollison(thing1, thing2)
+    {
+       
+    }
 }
 
 
