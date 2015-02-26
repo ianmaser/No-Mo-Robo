@@ -14,9 +14,17 @@ function CollsionHandler(world)
     var currentEnemies = new DList();
     var currentProjectiles = new DList();
     
-    function checkCollison(thing1, thing2)
+    function checkCollison(obj1, obj2)
     {
+       if(obj1.getSprite().x === obj2.getSprite().x && obj1.getSprite().y === obj2.getSprite().y)
+       {
+          return 1;
+       }
        
+       else
+       {
+          return 2;
+       }
     }
 }
 
