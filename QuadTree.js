@@ -13,6 +13,13 @@
  getDataList()-get a nodes elements (ememies, projectiles, ect.)
  getChildren()-get a node's children (quadrent's of a client)
  getMaxChildren()- returns the maximum number of children may seem unnecissary but you never know
+ isFull()-returns whether or not the size of the child list is equal to the max children
+ -----------------------------------------------------------------------------------------
+ Quad Tree:
+ Node()-private inner class
+ getRoot()-returns the root
+ addChildren(node)- appends to the child list of the param node
+ split(node)- splits the param node and appends data to it's children
  */
 
 
@@ -66,8 +73,13 @@ function QuadTree()
             return _MAX_CHILDREN;  
         };
         
+        function isFull()
+        {
+        	return(this.children.size() == getMaxChildren());
+        }
         
-   }
+        
+   };
    
     var _root = new Node(null); // root has no parent
     
@@ -149,22 +161,22 @@ function QuadTree()
 					
 					else // if we have appended the last data element
 					{
+						node.getDataList.clear();
 						return; //we're done
 					}
 					
-					if(node.getChildren().getIndex() !== -1) // if we haven't run off the end of the list...
+					if(node.getChildren.getIndex() !== -1) // if we haven't run off the end of the list...
 					{
-						continue; // because we need to run another check on a different child
+						continue; // because we need to run another check with a different child
 					}
 					
 					else //if we have run off the end of the list...
 					{
-						node.getChildren.moveTo(node.getChildren.length() - 1); // move to the last child
-						this.split(node.getChildren.getElement()); //split it
+						node.getChildren.moveTo(node.getChildren.size() - 1); // move to the last child
+						split(node.getChildren.getElement()); //split it
 					}
 				}
 			}
-				
         }
     };
 }
