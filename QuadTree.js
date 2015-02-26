@@ -73,6 +73,7 @@ function QuadTree()
             return _MAX_CHILDREN;  
         };
         
+        
         function isFull()
         {
         	return(this.children.size() == getMaxChildren());
@@ -108,6 +109,11 @@ function QuadTree()
     {
     	getChildren().append(data);
     };
+    
+    this.update = function()
+    {
+    	
+    }
     
     function split(node)
     {
