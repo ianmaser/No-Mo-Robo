@@ -105,6 +105,14 @@ function QuadTree()
        }
     };
     
+    this.roemoveChildren = function(node)
+    {
+    	if(node instanceof Node)
+    	{
+    		node.getChildren().clear();
+    	}
+    }
+    
     this.addData = function(data)
     {
     	getChildren().append(data);
@@ -189,4 +197,6 @@ function QuadTree()
 			}
         }
     };
+    
+    function unsplit(node)
 }
