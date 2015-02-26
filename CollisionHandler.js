@@ -8,7 +8,7 @@
  * *************************************************************************************************************************************************************************************************
  */
 
-function CollsionHandler(world)
+function CollsionHandler(qt)
 {
     var curretTurrets = new DList();
     var currentEnemies = new DList();
