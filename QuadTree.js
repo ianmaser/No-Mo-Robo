@@ -37,7 +37,7 @@ function QuadTree()
 		var y_TOP_LEFT = (3 * canvas.width) / 5;
 		
 		var x_TOP_RIGHT = canvas.width;
-		var y_GRID_TOP_RIGHT = (3 * canvas.width) / 5;
+		var y_TOP_RIGHT = (3 * canvas.width) / 5;
 		
 		var x_BOTTOM_LEFT = 100;
 		var y_BOTTOM_LEFT = canvas.height;
