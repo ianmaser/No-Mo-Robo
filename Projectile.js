@@ -28,14 +28,14 @@ function Projectile(x, y)// Note to self and other team members look up function
     
     this.damage = function(damage, enemy) 
     {
-        //to be implemented
+        enemy.modifyConditon(-damage);
     };
     
     //@override note to team members: take your pick. Which damage function is better?
-    this.damage = function(damage)
-    {
+   // this.damage = function(damage)
+    //{
         //to be impemented
-    };
+   // };
     
     this.removeSelf = function()
     {
