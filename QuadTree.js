@@ -25,7 +25,7 @@ function QuadTree()
     {
         var children = new DList();
         var elems = new DList();
-        //Grid scale- didn't know where to put it so I put it here.
+        //Grid boundries- didn't know where to put it so I put it here.
 		var x_GRID_TOP_LEFT = 100;
 		var y_TOP_LEFT = (3 * canvas.width) / 5;
 		
