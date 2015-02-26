@@ -21,6 +21,7 @@ function CollsionHandler(qt)
           if(obj1.getSprtie().y + obj1.getSprite().height <= obj2.getSprite().y && 
           obj1.getSprite().y + obj1.getSprite().height >= obj2.getSprite().y)
           {
+            damageStep(obj1, obj2)
             return true;
           }
        }
@@ -28,6 +29,19 @@ function CollsionHandler(qt)
        else
        {
           return false;
+       }
+    };
+    
+    function damageStep(obj1, obj2)
+    {
+       if(obj1 instanceof Enemey && obj2 instanceof House)
+       {
+          obj1.damage();
+       }
+       
+       if(obj1 instanceof Projectile && obj2 instaceof Enemy)
+       {
+          Projectile.damage();
        }
     }
 }
