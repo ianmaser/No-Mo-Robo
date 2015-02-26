@@ -1,0 +1,33 @@
+use2D = true;
+initGame("canvas");
+
+var turretArray = [];
+var turretArray = [];
+var gameOver = false; 
+var eHandler = new EnemyHandler();
+var pHandler = new PlayerHandler();
+var cHandler = new CollisionHandler();
+
+
+setInterval(update, 17);	
+world.update = function(d){
+	
+if (gameOver == true)
+{
+	//reinitializing handlers
+	var eHandler = new EnemyHander();
+	var pHandler = new PlayerHandler();
+	var cHandler = new CollisionHandler;
+	var gameOver = false;
+	
+	
+}
+		
+
+pHandler.update(d);
+eHandler.update(d);
+cHandler.update();
+
+	
+	
+};
