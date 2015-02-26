@@ -104,7 +104,7 @@ function QuadTree()
        }
     };
     
-    this.addData(data)
+    this.addData = function(data)
     {
     	getChildren().append(data);
     };
