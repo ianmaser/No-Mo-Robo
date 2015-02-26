@@ -1,12 +1,18 @@
 /* QuadTree.js
  * @author Jamison Ball
  * @date 2/22/15
- * @last modified 2/24/15
+ * @last modified 2/25/15
  * @last editor
   minimum width: 100 max width: canvas.width minumum height: 3 * canvas.height/5 max height canvas.height
  * ************************************************************************************************************************************************************************************************
  * A quad tree data structure to help with collisons
  * ************************************************************************************************************************************************************************************************
+ Methods:
+ Node: 
+ getParent()-get a node's parent
+ getDataList()-get a nodes elements (ememies, projectiles, ect.)
+ getChildren()-get a node's children (quadrent's of a client)
+ getMaxChildren()- returns the maximum number of children may seem unnecissary but you never know
  */
 
 
@@ -19,6 +25,7 @@ function QuadTree()
     {
         var children = new DList();
         var elems = new DList();
+        //Grid scale- didn't know where to put it so I put it here.
 		var x_GRID_TOP_LEFT = 100;
 		var y_TOP_LEFT = (3 * canvas.width) / 5;
 		
@@ -31,9 +38,10 @@ function QuadTree()
 		var x_BOTTOM_RIGHT = canvas.width;
 		var y_BOTTOM_RIGHT = canvas.height;
 		
-        var parent = parent;
-        this.width = canvas.width;
-        this.height = canvas.height;
+        	var nodeParent = parent;
+        	
+        	this.width = canvas.width;
+        	this.height = canvas.height;
 		
 		
     
@@ -61,7 +69,7 @@ function QuadTree()
         
    }
    
-    var _root = new Node();
+    var _root = new Node(null); // root has no parent
     
     this.getRoot = function()
     {
@@ -91,27 +99,36 @@ function QuadTree()
         {
             for(var i = 0; i < 4; i++)
             {
-                node.addChildren(new Node()); // add children
+                node.addChildren(new Node(node)); // add children
             }
             
             for(var j = 0; j < 4; j++)
             {
-				//set up the children sizes
+		//set up the children sizes
                 node.getChildren().moveTo(j);
                 node.getChildren().getElement().width = node.width / 2;
                 node.getChildren().getElement().height = node.height / 2;
             }
+		//first child position	
+	        node.getChildren().moveTo(0); //0
+	        node.getChildren().getElement().x = node.x;
+	        node.getChildren().getElement().y = 0;
+	        //second child position
+	        node.getChildren().moveNext(); // 1
+	        node.getChildren().getElement().x = node.width / 2;
+	        node.getChildren().getElement().y = 0;
+	        //third child position
+	        node.getChildren().moveNext(); // 2
+	        node.getChildren().getElement().x = node.x;
+	        node.getChildren().getElement().y = -node.height / 2; //remember down is up and up is down (-y is the upper screen)
+	        //fourth child position
+	        node.getChildren().moveNext(); // 3
+	        node.getChildren().getElement().x = -node.width / 2; // x direction is normal
+	        node.getChildren().getElement().y = node.height / 2; //smae invert situation as with child 2
 			
-			for(var k = 0; k < 4; k++) // note I know this for loop is incorrect for right now to be corrected at next team meeting.
-			{
-				//set up children positions
-				node.getChilden().moveTo(k);
-				node.getChildren().getElement().x = ((node.getChildren.getParent().x) / 4);
-				node.getChildren().getElement().y = ((node.getChildren.getParent().y) / 4);
-			}
-			
-			node.getDataList().moveTo(0);//start at the beginning
+			node.getDataList().moveTo(0);//start at the beginning of the data list
 			node.getChildren.moveTo(0); // also start at beginning of child list
+			
 			for(var m = 0; m < 4; m++)
 			{
 				// move the elements from parent to child
@@ -128,6 +145,11 @@ function QuadTree()
 					if(node.getDataList().getIndex() !== -1) //if we haven't appended the last data element
 					{
 						node.getChildren().moveNext(); //move to the next child
+					}
+					
+					else // if we have appended the last data element
+					{
+						return; //we're done
 					}
 					
 					if(node.getChildren().getIndex() !== -1) // if we haven't run off the end of the list...
