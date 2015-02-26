@@ -18,12 +18,12 @@ function CollsionHandler(world)
     {
        if(obj1.getSprite().x === obj2.getSprite().x && obj1.getSprite().y === obj2.getSprite().y)
        {
-          return 1;
+          return true;
        }
        
        else
        {
-          return 2;
+          return false;
        }
     }
 }
