@@ -104,6 +104,10 @@ function QuadTree()
        }
     };
     
+    this.addData(data)
+    {
+    	getChildren().append(data);
+    }
     
     function split(node)
     {
