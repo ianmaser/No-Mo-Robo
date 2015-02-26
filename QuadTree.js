@@ -1,7 +1,7 @@
 /* QuadTree.js
  * @author Jamison Ball
  * @date 2/22/15
- * @last modified 2/25/15
+ * @last modified 2/26/15
  * @last editor
   minimum width: 100 max width: canvas.width minumum height: 3 * canvas.height/5 max height canvas.height
  * ************************************************************************************************************************************************************************************************
