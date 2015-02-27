@@ -39,7 +39,7 @@ function CollsionHandler(qt)
           obj1.damage();
        }
        
-       if(obj1 instanceof Projectile && obj2 instaceof Enemy)
+       if(obj1 instanceof Projectile && obj2 instanceof Enemy)
        {
           Projectile.damage();
        }
