@@ -8,8 +8,9 @@
  * *************************************************************************************************************************************************************************************************
  */
 
-function CollsionHandler(qt)
+function CollsionHandler()
 {
+    var qt = new QuadTree();
     var curretTurrets = new DList();
     var currentEnemies = new DList();
     var currentProjectiles = new DList();
@@ -36,12 +37,12 @@ function CollsionHandler(qt)
     {
        if(obj1 instanceof Enemey && obj2 instanceof House)
        {
-          obj1.damage();
+         obj2.mondifyHealth(obj1.damage);
        }
        
        if(obj1 instanceof Projectile && obj2 instanceof Enemy)
        {
-          Projectile.damage();
+          obj2.modifyCondition(obj1.damage());
        }
     }
 }
