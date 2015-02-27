@@ -3,8 +3,8 @@
 A list of global variables (to be decalred) and functions for use in different classes
 ********************************************************************************************************************************
 @authors: Jamsion Ball
-@date: 2/27/15
-@last: update
+@date: 2/18/15
+@last: update 2/27/15
 @last: editor
 */
 var MAX_TURRETS; //max number of turrets on the field
