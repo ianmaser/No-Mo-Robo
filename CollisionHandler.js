@@ -45,6 +45,31 @@ function CollsionHandler()
           obj2.modifyCondition(obj1.damage());
        }
     }
+    
+    function clear(node)
+    {
+       if(node instanceof Node)
+       {
+          for(node.getChildren().moveTo(0); node.getChildren.getIndex() >= 0; node.getChildren.moveNext())
+          {
+             if(node.getChildren.getElement() instanceof Enemy)
+             {
+                if(node.getChildren().condition() <= 0)
+                {
+                   node.getChildren().remove();
+                }
+                
+                else if(node.getChildren.getElement() instanceof Projectile)
+                {
+                   if(node.getChildren().hasCollided())
+                   {
+                      node.getChildren().remove();
+                   }
+                }
+             }
+          }
+       }
+    }
 }
 
 
