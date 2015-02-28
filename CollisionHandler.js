@@ -43,6 +43,7 @@ function CollsionHandler()
        if(obj1 instanceof Projectile && obj2 instanceof Enemy)
        {
           obj2.modifyCondition(obj1.damage());
+          obj1._collision = true;
        }
     }
     
@@ -64,6 +65,7 @@ function CollsionHandler()
                    if(node.getChildren().hasCollided())
                    {
                       node.getChildren().remove();
+                      
                    }
                 }
              }
