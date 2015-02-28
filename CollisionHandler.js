@@ -73,12 +73,12 @@ function CollsionHandler()
        }
     };
     
-    this.collison()
+    this.collison(lref)
     {
       for(currentEnemeies.moveTo(0); currentEnemies.getIndex() >= 0; currentEnemies.moveNext())
       {
         currentProjectiles.moveTo(0);
-         if(checkCollison(currentEnemies.getElement(), currentProjectiles.getElement()))
+         if(checkCollison(lref.getElement(), lref.getElement()))
          {
             return true;
          }
@@ -87,9 +87,9 @@ function CollsionHandler()
        
     };
     
-    this.update = function()
+    this.update = function(lref)
     {
-       collison();
+       collison(lref);
     }
 }
 
