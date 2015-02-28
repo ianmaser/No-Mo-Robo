@@ -35,12 +35,12 @@ function CollsionHandler()
     {
        if(obj1 instanceof Enemey && obj2 instanceof House)
        {
-         obj2.modifyHealth(obj1.damage);
+         obj2.modifyCondition(-(obj1.damage()));
        }
        
        if(obj1 instanceof Projectile && obj2 instanceof Enemy)
        {
-          obj2.modifyCondition(obj1.damage());
+          obj2.modifyCondition(-(obj1.damage()));
           obj1._collision = true;
        }
     }
