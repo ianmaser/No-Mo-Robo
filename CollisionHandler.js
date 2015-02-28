@@ -34,7 +34,7 @@ function CollsionHandler()
     {
        if(obj1 instanceof Enemey && obj2 instanceof House)
        {
-         obj2.mondifyHealth(obj1.damage);
+         obj2.modifyHealth(obj1.damage);
        }
        
        if(obj1 instanceof Projectile && obj2 instanceof Enemy)
