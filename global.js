@@ -25,6 +25,7 @@ var TURRET_SPRITE_HEIGHT;
 var PROJECTILE_SPRITE_SRC;
 var PROJ_SPRITE_WIDTH;
 var PROJ_SPRITE_HEIGHT;
+//**********************
 
 //House Constants
 var HOUSE_CONDITION;
@@ -32,3 +33,4 @@ var HOUSE_POSITION;
 var HOUSE_SPRITE_SRC;
 var HOUSE_SPRITE_WIDTH;
 var HOUSE_SPRITE_HEIGHT;
+//**********************
