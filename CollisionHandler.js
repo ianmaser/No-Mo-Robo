@@ -17,7 +17,7 @@ function CollsionHandler()
        if(obj1.getSprite().x + obj1.getSprite().width >= obj2.getSprite().x)
        {
           if(obj1.getSprtie().y + obj1.getSprite().height <= obj2.getSprite().y && 
-          obj1.getSprite().y + obj1.getSprite().height >= obj2.getSprite().y)
+          obj1.getSprite().y + obj1.getSprite().height <= obj2.getSprite().y)
           {
             damageStep(obj1, obj2);
             return true;
