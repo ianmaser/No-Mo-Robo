@@ -11,10 +11,7 @@
 function CollsionHandler()
 {
     var qt = new QuadTree();
-    var curretTurrets = new DList();
-    var currentEnemies = new DList();
-    var currentProjectiles = new DList();
-    
+
     function checkCollison(obj1, obj2)
     {
        if(obj1.getSprite().x + obj1.getSprite().width >= obj2.getSprite().x)
@@ -73,12 +70,12 @@ function CollsionHandler()
        }
     };
     
-    this.collison(lref)
+    this.collision(ref)
     {
-      for(currentEnemeies.moveTo(0); currentEnemies.getIndex() >= 0; currentEnemies.moveNext())
+      for(this.elist.moveTo(0); this.elist.getIndex() >= 0; this.elist.moveNext())
       {
-        currentProjectiles.moveTo(0);
-         if(checkCollison(lref.getElement(), lref.getElement()))
+         ref.moveTo(0);
+         if(checkCollison(ref.getElement(), ref.getElement()))
          {
             return true;
          }
@@ -87,9 +84,18 @@ function CollsionHandler()
        
     };
     
-    this.update = function(lref)
+    this.update = function(elist,plist, tlist)
     {
-       collison(lref);
+       
+      for(elist.moveTo(0); elist.getIndex() >= 0; elist.moveNext())
+      {
+         ref.moveTo(0);
+         if(checkCollison(plist.getElement(), elist.getElement()))
+         {
+            ;
+         }
+      }
+       collision(tlist);
     }
 }
 
