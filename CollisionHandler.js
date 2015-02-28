@@ -20,7 +20,6 @@ function CollsionHandler()
           if(obj1.getSprtie().y + obj1.getSprite().height >= obj2.getSprite().y && 
           obj1.getSprite().y <= obj2.getSprite().y + obj2.getSprite().height)
           {
-            damageStep(obj1, obj2);
             return true;
           }
        }
@@ -43,6 +42,8 @@ function CollsionHandler()
           obj2.modifyCondition(-(obj1.damage()));
           obj1._collision = true;
        }
+       
+       //write condition for enemy to turret
     }
     
     function clear(node)
@@ -85,18 +86,29 @@ function CollsionHandler()
        
     };
     
-    this.update = function(elist,plist, tlist)
+    this.update = function(elist,plist, tlist, house)
     {
-       
-      for(elist.moveTo(0); elist.getIndex() >= 0; elist.moveNext())
-      {
-         ref.moveTo(0);
-         if(checkCollison(plist.getElement(), elist.getElement()))
-         {
-            ;
-         }
-      }
-       collision(tlist);
+       for(elist.moveTo(0); elist.getIndex() >= 0; elist.moveNext())
+       {
+         
+          for(plist.moveTo(0); plist.getIndex() >= 0; plist.moveNext())
+          {
+             if(checkCollision(plist.getElement(), elist.getElement()))
+             {
+                            damageStep(plist.getElement(), elist.getElement());
+             }
+          }
+          
+          if(checkCollison(elist.getElement(), house);
+          
+        /*  for(tlist.moveTo(0); tlist.getIndex() >= 0; tlist.moveNext())
+          {
+             if(checkCollision(plist.getElement(), elist.getElement()))
+             {
+                            damageStep(elist.getElement(), elist.getElement());
+             }
+          } */
+       }
     }
 }
 
