@@ -22,7 +22,7 @@ function CollsionHandler()
           if(obj1.getSprtie().y + obj1.getSprite().height <= obj2.getSprite().y && 
           obj1.getSprite().y + obj1.getSprite().height >= obj2.getSprite().y)
           {
-            damageStep(obj1, obj2)
+            damageStep(obj1, obj2);
             return true;
           }
        }
@@ -87,7 +87,7 @@ function CollsionHandler()
        
     };
     
-    this.update()
+    this.update = function()
     {
        collison();
     }
