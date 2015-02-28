@@ -16,13 +16,13 @@ var BASE_HEIGHT; // dstance between the tile grid and the bottom of the screen
 var TURRET_CONDITION;
 var TURRET_FIRE_RATE;
 var TURRET_DAMAGE;
-var TURRET_SPRITE_SRC;
+var TURRET_SPRITE_SRC = "http://i.imgur.com/rKsSu90.gif";
 var TURRET_SPRITE_WIDTH;
 var TURRET_SPRITE_HEIGHT;
 //***********************
 
 //Projectile Constants
-var PROJECTILE_SPRITE_SRC;
+var PROJECTILE_SPRITE_SRC = "http://i.imgur.com/fzuYUF4.png";
 var PROJ_SPRITE_WIDTH;
 var PROJ_SPRITE_HEIGHT;
 //**********************
@@ -30,7 +30,7 @@ var PROJ_SPRITE_HEIGHT;
 //House Constants
 var HOUSE_CONDITION;
 var HOUSE_POSITION;
-var HOUSE_SPRITE_SRC;
+var HOUSE_SPRITE_SRC = "http://i.imgur.com/GjCuaSO.png";
 var HOUSE_SPRITE_WIDTH;
 var HOUSE_SPRITE_HEIGHT;
 //**********************
