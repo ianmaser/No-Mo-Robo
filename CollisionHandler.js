@@ -14,7 +14,8 @@ function CollsionHandler()
 
     function checkCollison(obj1, obj2)
     {
-       if(obj1.getSprite().x + obj1.getSprite().width >= obj2.getSprite().x)
+       if(obj1.getSprite().x + obj1.getSprite().width >= obj2.getSprite().x &&
+       obj1.getSprite().x  <= obj2.getSprite().x + obj2.getSprite().width)
        {
           if(obj1.getSprtie().y + obj1.getSprite().height >= obj2.getSprite().y && 
           obj1.getSprite().y <= obj2.getSprite().y + obj2.getSprite().height)
