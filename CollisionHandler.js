@@ -71,6 +71,25 @@ function CollsionHandler()
              }
           }
        }
+    };
+    
+    this.collison()
+    {
+      for(currentEnemeies.moveTo(0); currentEnemies.getIndex() >= 0; currentEnemies.moveNext())
+      {
+        currentProjectiles.moveTo(0);
+         if(checkCollison(currentEnemies.getElement(), currentProjectiles.getElement()))
+         {
+            return true;
+         }
+      }
+       
+       
+    };
+    
+    this.update()
+    {
+       collison();
     }
 }
 
